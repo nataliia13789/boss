@@ -1,0 +1,32 @@
+$color-text: #4F4F4F;
+$color-heading: #161515;
+$color-bg-dark: #0F2B41;
+$color-text-inverse: #FFFFFF;
+$color-link-hover: rgba(79, 79, 79, 0.35);
+
+
+%opensans-400 {
+  font-family: 'OpenSans-Regular', sans-serif;
+  font-weight: 400;
+}
+
+%opensans-700 {
+  font-family: 'OpenSans-Bold', sans-serif;
+  font-weight: 700;
+}
+
+%lora-500 {
+  font-family: 'Lora-Medium', serif;
+  font-weight: 500;
+}
+
+%lora-400 {
+  font-family:'Lora-Regular', serif;
+  font-weight: 400;
+}
+
+%inter-400 {
+  font-family: 'Inter-Regular', sans-serif;
+  font-weight: 400;
+}
+

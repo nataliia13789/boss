@@ -53,6 +53,11 @@ function images() {
     .pipe(dest('app/images'));
 }
 
+function svg() {
+  return src('app/images/src/**/*.svg')
+    .pipe(dest('app/images'));
+}
+
 
 function styles() {
   return src('app/scss/style.scss')
@@ -84,7 +89,8 @@ function watching() {
   });
   watch(['app/scss/style.scss'], styles);
   watch(['app/js/main.js'], scripts);
-  watch(['app/images/scr'], images);
+  watch(['app/images/src/**/*.{jpg,jpeg,png}'], images);
+  watch(['app/images/src/**/*.svg'], svg);
   watch(['app/components/*', 'app/pages/*'], pages);
   watch(['app/*.html']).on('change', browserSync.reload);
 }
@@ -110,6 +116,8 @@ exports.watching = watching;
 exports.fonts = fonts;
 exports.pages = pages;
 exports.images = images;
+exports.svg = svg;
+exports.sprites = sprites;
 exports.svgstore = svgstore;
 exports.scripts = scripts;
 exports.building = building;
