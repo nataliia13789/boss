@@ -12,7 +12,7 @@ body {
 .header {
   padding: 25px 0;
   text-transform: uppercase;
-  color: vars.$color-heading; 
+  color: vars.$color-heading;
 
   &__inner {
     display: flex;
@@ -68,4 +68,126 @@ body {
   &__link:hover {
     border-bottom-color: vars.$color-link-hover;
   }
+}
+
+.footer {
+  background-color: vars.$color-bg-dark;
+  color: vars.$color-text-inverse;
+
+  &__menu {
+    padding: 55px 0 60px;
+    border-bottom: 1px solid vars.$color-underline;
+    margin-bottom: 50px;
+  }
+
+  &__menu-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  &__menu-item {
+    border-bottom: 1px solid rgba(vars.$color-text-inverse, 0.35);
+    margin-bottom: 1px;
+  }
+
+  &__menu-logo {
+    border-bottom: none;
+  }
+
+
+
+  &__elements {
+    display: flex;
+    margin-bottom: 50px;
+    gap: 0 83px;
+  }
+
+
+  &__element-title {
+    opacity: .5;
+    margin-bottom: 20px;
+  }
+
+  &__element-address {
+    width: 160px;
+  }
+
+
+  &__element-item {
+    line-height: 1.55;
+    margin-bottom: 5px;
+  }
+
+
+  &__form {
+    width: 250px;
+    position: relative;
+  }
+
+  &__form-input {
+    display: flex;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    padding: 1px 30px 5px 0;
+    border-bottom: 1px solid vars.$color-underline;
+    color: vars.$color-text-inverse;
+
+    &::placeholder {
+      color: vars.$color-text-inverse;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom-color: vars.$color-text-inverse;
+    }
+  }
+
+  &__form-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    position: absolute;
+    top: 1px;
+    right: 0;
+    cursor: pointer;
+  }
+
+  &__social-list {
+    display: flex;
+    gap: 0 10px;
+  }
+
+  &__bottom {
+    background-color: vars.$color-heading;
+  }
+
+  &__bottom-inner {
+    display: flex;
+    padding: 7px 0 9px;
+    font-size: 11px;
+    line-height: 1.3; 
+  }
+
+  &__bottom-copy {
+    margin-left: 76px;
+  }
+
+  &__bottom-list {
+    display: flex;
+    gap: 0 37px; 
+    margin-left: auto;
+    margin-right: 76px;
+  }
+
+  &__bottom-item + .footer__bottom-item {
+    position: relative;
+    &::before{
+      content: '|';
+      position: absolute;
+      left: -21px;
+    }
+  }
+
 }
