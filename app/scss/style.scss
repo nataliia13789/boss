@@ -232,3 +232,64 @@ body {
     padding: 12px 38px;
   }
 }
+
+.new-collection {
+  &__inner {
+    padding: 150px 0 90px;
+    display: flex;
+  }
+
+  &__content {
+    padding: 75px 42px 0 39px;
+    max-width: 498px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    color: vars.$color-heading;
+    font-size: 45px;
+    @extend %lora-400;
+    margin-bottom: 23px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    font-size: 20px;
+  }
+
+  &__link {
+    border: 1px solid vars.$color-heading;
+    color: vars.$color-heading;
+    padding: 10px 65px;
+    margin-top: auto;
+    align-self: start;
+  }
+
+  &__img {
+    padding-top: 75px;
+  }
+
+  &__box {
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    position: relative;
+  }
+
+  &__box-img {
+    position: absolute;
+    top: 0;
+    max-width: fit-content;
+    left: -75px;
+  }
+
+  &__caption {
+    margin-top: auto;
+    margin-bottom: 68px;
+    width: 289px;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+}
