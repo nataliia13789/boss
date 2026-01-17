@@ -293,3 +293,84 @@ body {
     font-size: 20px;
   }
 }
+
+.join-us {
+  position: relative;
+  min-height: 613px;
+  background-color: vars.$color-bg-dark;
+  overflow: hidden;
+
+  &__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(50% - 40px);
+    height: 100%;
+  }
+
+  &__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    max-width: 580px;
+    margin-left: auto;
+    padding: 94px 0;
+    color: vars.$color-text-inverse;
+  }
+
+  &__title {
+    @extend %lora-400;
+    font-size: 45px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    @extend %lora-400;
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    padding-bottom: 10px;
+    border-bottom: 1px solid vars.$color-text-inverse;
+    @extend %opensans-400;
+    color: vars.$color-text-inverse;
+
+    &::placeholder {
+      color: vars.$color-text-inverse;
+      font-size: 20px;
+    }
+  }
+
+  &__input+.join-us__input {
+    margin-top: 25px;
+  }
+
+  &__btn {
+    border: none;
+    background-color: vars.$color-heading;
+    border-radius: 3px;
+    display: block;
+    width: 100%;
+    color: vars.$color-text-inverse;
+    padding: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 40px 0 20px;
+  }
+
+  &__caption {
+    font-size: 11px;
+    margin-left: 30px;
+  }
+}
