@@ -5,7 +5,7 @@ const scss = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify-es').default;
 const autoprefixer = require('gulp-autoprefixer');
-const clean = require('gulp-clean'); 
+const clean = require('gulp-clean');
 const include = require('gulp-include');
 const svgstore = require('gulp-svgstore');
 
@@ -14,13 +14,13 @@ function sprites() {
     .pipe(svgstore())
     .pipe(dest('app/images'))
 }
- 
+
 function pages() {
   return src('app/pages/*.html')
-  .pipe(include({
-    includePaths: 'app/components'
-  }))
-  .pipe(dest('app'))
+    .pipe(include({
+      includePaths: 'app/components'
+    }))
+    .pipe(dest('app'))
     .pipe(browserSync.stream())
 }
 
@@ -30,26 +30,27 @@ function fonts() {
   return src('app/fonts/*.ttf')
     .pipe(ttf2woff2())
     .pipe(dest('app/fonts'));
-} 
+}
 
 
 function images() {
   const webp = require('gulp-webp');
   const avif = require('gulp-avif');
   const imagemin = require('gulp-imagemin');
-  const newer = require('gulp-newer');
 
-  return src(['app/images/src/**/*.{jpg,jpeg,png}', '!app/images/src/**/*.svg'])
-    .pipe(newer('app/images'))
-    .pipe(webp())
-    .pipe(dest('app/images'))
-    .pipe(src(['app/images/src/**/*.{jpg,jpeg,png}', '!app/images/src/**/*.svg']))
-    .pipe(newer('app/images'))
-    .pipe(avif({ quality: 50 }))
-    .pipe(dest('app/images'))
-    .pipe(src(['app/images/src/**/*.{jpg,jpeg,png}', '!app/images/src/**/*.svg']))
-    .pipe(newer('app/images'))
+  // JPG / PNG → оптимізовані
+  src('app/images/src/**/*.{jpg,jpeg,png,svg}')
     .pipe(imagemin())
+    .pipe(dest('app/images'));
+
+  // WEBP
+  src('app/images/src/**/*.{jpg,jpeg,png}')
+    .pipe(webp())
+    .pipe(dest('app/images'));
+
+  // AVIF
+  return src('app/images/src/**/*.{jpg,jpeg,png}')
+    .pipe(avif({ quality: 50 }))
     .pipe(dest('app/images'));
 }
 
