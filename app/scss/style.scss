@@ -375,3 +375,49 @@ body {
     margin-left: 30px;
   }
 }
+
+.beckham {
+  padding: 90px 0 230px 40px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  &__content {
+    max-width: 541px;
+  }
+
+  &__title {
+    @extend %lora-400;
+    font-size: 45px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: vars.$color-heading;
+  }
+
+  &__text {}
+
+  &__quote {
+    @extend %lora-400;
+    font-size: 20px;
+    color: vars.$color-text-inverse;
+    padding: 20px 27px;
+    background-color: vars.$color-bg-dark;
+    margin: 70px 0;
+    max-width: 471px;
+  }
+ 
+  &__img {
+    margin-bottom: 40px;
+  }
+
+  &__link {
+    border: 1px solid vars.$color-heading;
+    background-color: transparent;
+    padding: 10px;
+    display: block;
+    text-align: center;
+  }
+}
