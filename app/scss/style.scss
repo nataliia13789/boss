@@ -345,6 +345,7 @@ body {
     border-bottom: 1px solid vars.$color-text-inverse;
     @extend %opensans-400;
     color: vars.$color-text-inverse;
+    outline: none;
 
     &::placeholder {
       color: vars.$color-text-inverse;
