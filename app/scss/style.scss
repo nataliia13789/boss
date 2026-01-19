@@ -478,7 +478,7 @@ body {
     grid-template-columns: 1fr 329px;
     gap: 20px;
   }
- 
+
 
   &__title {
     @extend %lora-400;
@@ -504,7 +504,7 @@ body {
     margin-bottom: 5px;
     display: inline-block;
   }
- 
+
   &__box {
     margin-right: 30px;
   }
@@ -518,4 +518,69 @@ body {
     color: vars.$color-heading;
     margin-top: 90px;
   }
+}
+
+.appointment {
+  padding: 50px 0 100px;
+
+  &__title {
+    @extend%lora-400;
+    font-size: 45px;
+    color: vars.$color-heading;
+    margin-bottom: 77px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 77px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  &__form-title {
+    @extend%lora-400;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+  }
+
+  &__form-text {
+    @extend %opensans-700;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  &__form-input {
+    border: none;
+    background-color: transparent;
+    padding: 0 10px 10px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid vars.$color-text;
+    font-size: 20px;
+    color: vars.$color-text;
+    @extend %opensans-400;
+
+    &::placeholder {
+      color: vars.$color-text;
+    }
+  }
+
+  &__form-btn {
+    margin-top: auto;
+    border: none;
+    background-color: vars.$color-heading;
+    padding: 13px;
+    display: block;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 3px;
+  } 
 }
