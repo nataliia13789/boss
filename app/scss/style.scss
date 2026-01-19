@@ -393,11 +393,10 @@ body {
     @extend %lora-400;
     font-size: 45px;
     text-transform: uppercase;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     color: vars.$color-heading;
   }
 
-  &__text {}
 
   &__quote {
     @extend %lora-400;
@@ -408,7 +407,7 @@ body {
     margin: 70px 0;
     max-width: 471px;
   }
- 
+
   &__img {
     margin-bottom: 40px;
   }
@@ -419,5 +418,53 @@ body {
     padding: 10px;
     display: block;
     text-align: center;
+  }
+}
+
+.adventages {
+  background-color: vars.$color-bg-dark;
+
+  &__wrapper {
+    display: flex;
+    padding: 60px 0 38px;
+    position: relative;
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    left: 39px;
+  }
+
+  &__inner {
+    margin-left: auto;
+    color: vars.$color-text-inverse;
+    padding-right: 18px;
+  }
+
+  &__title {
+    @extend %lora-400;
+    font-size: 45px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+  }
+   
+
+  &__list {
+    column-count: 2;
+    column-gap: 80px; 
+  }
+
+  &__item {
+    margin-bottom: 30px;
+    font-size: 20px;
+    padding-left: 17px;
+    position: relative;
+
+    &::before{
+      content: '•';
+      position: absolute;
+      left: 0;
+    }
   }
 }
