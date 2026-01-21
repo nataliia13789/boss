@@ -582,5 +582,173 @@ body {
     color: #FFFFFF;
     cursor: pointer;
     border-radius: 3px;
-  } 
+  }
+}
+
+
+
+.collections-top {
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.breadcrumbs {
+  padding: 50px 0 90px;
+
+  &__list {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__item+.breadcrumbs__item::before {
+    content: '/';
+    position: absolute;
+    left: -10px;
+  }
+
+}
+
+
+.collections {
+
+  &__title {
+    @extend%lora-400;
+    font-size: 54px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    text-align: center;
+    color: vars.$color-heading;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-areas: "aa aa ab ba"
+      "aa aa bb ca"
+      "cb da db db"
+      "ea eb db db"
+      "fa fb fc fe";
+    gap: 40px;
+  }
+
+  &__item {
+    position: relative;
+
+    &:nth-child(1) {
+      grid-area: aa;
+    }
+
+    &:nth-child(2) {
+      grid-area: ab;
+    }
+
+    &:nth-child(3) {
+      grid-area: ba;
+    }
+
+    &:nth-child(4) {
+      grid-area: bb;
+    }
+
+    &:nth-child(5) {
+      grid-area: ca;
+    }
+
+    &:nth-child(6) {
+      grid-area: cb;
+      margin-top: -130px;
+    }
+
+    &:nth-child(7) {
+      grid-area: da;
+      margin-top: -130px;
+    }
+
+    &:nth-child(8) {
+      grid-area: db;
+    }
+
+    &:nth-child(9) {
+      grid-area: ea;
+    }
+
+    &:nth-child(10) {
+      grid-area: eb;
+    }
+
+    &:nth-child(11) {
+      grid-area: fa;
+    }
+
+    &:nth-child(12) {
+      grid-area: fb;
+    }
+
+    &:nth-child(13) {
+      grid-area: fc;
+    }
+
+    &:nth-child(14) {
+      grid-area: fe;
+    }
+  }
+
+
+  &__like {
+    position: absolute;
+    top: 10px;
+    right: 6px;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+.pagination {
+  padding: 20px 0 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+  }
+
+  &__link {
+    width: 43px;
+    height: 43px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: vars.$color-heading;
+  }
+
+  &__arrow {
+    width: 43px;
+    height: 43px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__link--active {
+    background-color: vars.$color-text;
+    color: #FFFFFF;
+  }
+
+  &__disabled {
+    display: none;
+  }
 }
