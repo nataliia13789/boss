@@ -997,3 +997,74 @@ body {
 .arrow-next {
   right: 0;
 }
+
+
+.page-404 {
+
+
+  &__container {
+    max-width: 1560px;
+    padding: 0 10px;
+    margin: 0 auto;
+  }
+
+
+  &__inner {
+    margin-top: 45px;
+    display: flex;
+  }
+
+  &__content {
+    width: 731px;
+    margin: 220px 14px 57px 0;
+    @extend %lora-400;
+    color: vars.$color-heading;
+  }
+
+  &__title {
+    font-size: 160px;
+    line-height: 1.1;
+    margin-bottom: 60px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+
+    span {
+      font-size: 48px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      width: 620px;
+      display: inline-block;
+    }
+  }
+ 
+}
+
+.moving {
+  padding: 22px 0;
+
+  &__text {
+    @extend %lora-400;
+    color: vars.$color-heading;
+    text-transform: uppercase;
+    font-size: 160px;
+    line-height: 1.1;
+    white-space: nowrap;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    opacity: .1;
+    animation-name: moving;
+    animation-duration: 25s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes moving {
+    0%{transform: translateX(0%);}
+    100%{transform: translateX(-100%);}
+  }
+}
