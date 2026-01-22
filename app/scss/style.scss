@@ -1,6 +1,7 @@
 @use 'reset';
 @use 'vars';
 @use 'global';
+@use '../../node_modules/swiper/swiper-bundle.css';
 @use 'fonts';
 
 body {
@@ -751,4 +752,248 @@ body {
   &__disabled {
     display: none;
   }
+}
+
+
+.product {
+  margin-bottom: 155px;
+  position: relative;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 2fr 1.1fr;
+    gap: 40px;
+    padding-right: 40px;
+
+  }
+
+  &__images {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+
+    picture:nth-child(2) {
+      grid-row: span 2;
+    }
+
+    img {
+      max-width: fit-content;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    @extend %lora-400;
+    font-size: 45px;
+    text-transform: uppercase;
+    color: vars.$color-heading;
+    position: absolute;
+    top: 0;
+  }
+
+  &__price {
+    margin-top: 88px;
+    margin-bottom: 30px;
+    @extend %opensans-700;
+    font-size: 25px;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    @extend %opensans-700;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 0;
+  }
+
+  &__list-term {
+    @extend %opensans-700;
+    margin-bottom: 5px;
+  }
+
+
+  &__list-value {
+    margin: 0;
+    margin-bottom: 30px;
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  &__btn {
+    border-radius: 3px;
+    background-color: transparent;
+    border: 1px solid vars.$color-text;
+    padding: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: vars.$color-text;
+    @extend %opensans-400;
+    cursor: pointer;
+  }
+
+  &__btn-add {
+    grid-column: 1 / -1;
+    text-transform: uppercase;
+    padding: 13px;
+    font-size: 20px;
+  }
+}
+
+.radio-box {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+
+  &:checked+.radio-style::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: vars.$color-text;
+    top: 2px;
+    left: 2px;
+  }
+}
+
+.product__list-radio {
+  display: flex;
+  gap: 30px;
+  margin-left: 0;
+}
+
+.radio-label {
+  padding-left: 26px;
+  cursor: pointer;
+}
+
+.radio-style {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid vars.$color-text;
+  background-color: transparent;
+  margin-left: -26px;
+  margin-top: 2px;
+}
+
+.product__list-size {
+  margin-top: auto;
+}
+
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+
+  &:checked+.checkbox-style::before {
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 1px;
+    background-color: vars.$color-text;
+    top: 2px;
+    left: 2px;
+  }
+}
+
+.checkbox-label {
+  cursor: pointer;
+  padding-left: 20px;
+}
+
+.checkbox-style {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 1px;
+  border: 1px solid vars.$color-text;
+  background-color: transparent;
+  margin-left: -20px;
+  margin-top: 2px;
+}
+
+.product__list-checkbox {
+  display: flex;
+  gap: 10px;
+}
+
+.complete-look {
+  margin-bottom: 90px;
+
+  &__title {
+    color: vars.$color-heading;
+    font-size: 30px;
+    @extend %lora-400;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+    max-width: 890px;
+    text-align: center;
+    margin: 0 auto 40px;
+    border-bottom: 2px solid vars.$color-secondary;
+  }
+
+  &__sliders {
+    width: 100%;
+    overflow: hidden;
+    max-width: 950px;
+    padding: 0 30px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+  }
+
+  &__img {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+
+  &__price {
+    font-size: 20px;
+    @extend %opensans-700;
+  }
+
+  &__slide-arrow {
+    position: absolute;
+    z-index: 10;
+    top: 38%;
+    cursor: pointer;
+  }
+}
+
+.arrow-prev {
+  left: 0;
+}
+
+.arrow-next {
+  right: 0;
 }
